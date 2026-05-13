@@ -38,6 +38,7 @@ const config = {
     apiKey: process.env.GROQ_API_KEY ?? "",
     recommendationModel: process.env.GROQ_RECOMMENDATION_MODEL ?? "llama-3.1-8b-instant",
     moderationModel: process.env.GROQ_MODERATION_MODEL ?? "llama-3.1-8b-instant",
+    chatbotModel: process.env.GROQ_CHATBOT_MODEL ?? "llama-3.1-8b-instant",
   },
   cloudinary: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME ?? "",

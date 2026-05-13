@@ -17,6 +17,7 @@ import { SellerDashboardRoutes } from '../modules/sellerDashboard/sellerDashboar
 import { AdminDashboardRoutes } from '../modules/adminDashboard/adminDashboard.route.js';
 import { RecommendationRoutes } from '../modules/recommendation/recommendation.route.js';
 import { ModerationRoutes } from '../modules/moderation/moderation.route.js';
+import { ChatbotRoutes } from '../modules/chatbot/chatbot.route.js';
 
 const router = express.Router();
 
@@ -92,6 +93,10 @@ const moduleRoutes = [
   {
     path: "/moderation",
     route: ModerationRoutes,
+  },
+  {
+    path: "/chatbot",
+    route: ChatbotRoutes,
   }
 ];
 
