@@ -1,0 +1,5 @@
+node_modules/
+.env
+dist/
+status.txt/
+quick-1ed55-firebase-adminsdk-fbsvc-ad51453437.json
