@@ -59,3 +59,19 @@ export const updateProductValidation = z.object({
     sku: z.string().min(1, 'SKU is required').optional(),
   }),
 });
+
+export const searchProductValidation = z.object({
+  query: z.object({
+    q: z.string().trim().min(1).max(100).optional(),
+    query: z.string().trim().min(1).max(100).optional(),
+    category: z.string().trim().min(1).max(80).optional(),
+    shop: z.string().trim().min(1).optional(),
+    page: z.coerce.number().int().min(1).optional(),
+    limit: z.coerce.number().int().min(1).max(50).optional(),
+    inStock: z.enum(['true', 'false']).optional(),
+    sortBy: z.enum(['relevance', 'newest', 'price_asc', 'price_desc', 'rating', 'popular']).optional(),
+  }).refine((data) => Boolean(data.q || data.query || data.category || data.shop), {
+    message: 'Search query, category, or shop is required',
+    path: ['q'],
+  }),
+});

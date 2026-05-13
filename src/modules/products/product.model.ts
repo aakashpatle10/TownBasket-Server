@@ -114,6 +114,7 @@ productSchema.pre('validate', function (this: HydratedDocument<IProduct>) {
 productSchema.index({ shop: 1 });
 productSchema.index({ category: 1 });
 productSchema.index({ status: 1 });
+productSchema.index({ title: 'text', description: 'text', category: 'text' });
 
 export const Product = mongoose.model<IProduct>(
   'Product',

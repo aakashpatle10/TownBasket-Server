@@ -2,7 +2,7 @@ import express from 'express';
 import {authMiddleware} from '../../middlewares/auth.middleware.js';
 import validateRequest from '../../middlewares/validateRequest.js';
 import { ProductController } from './product.controller.js';
-import { createProductValidation, updateProductValidation } from './product.validation.js';
+import { createProductValidation, searchProductValidation, updateProductValidation } from './product.validation.js';
 
 const router = express.Router();
 
@@ -14,6 +14,7 @@ router.post(
 );
 
 router.get('/', ProductController.getAllProducts);
+router.get('/search', validateRequest(searchProductValidation), ProductController.searchProducts);
 router.get('/shop/:shopId', ProductController.getShopProducts);
 router.get('/:id', ProductController.getSingleProduct);
 router.patch(
